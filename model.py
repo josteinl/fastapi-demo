@@ -15,7 +15,6 @@ class Project(Base):
     srid = Column(Integer, nullable=False)
     locations = relationship(
         "Location",
-        primaryjoin="Project.project_id==Location.project_id",
         back_populates="project",
     )
 
