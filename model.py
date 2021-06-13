@@ -20,7 +20,6 @@ class Project(Base):
     )
 
 
-
 class Location(Base):
     __tablename__ = "location"
     location_id = Column(Integer, primary_key=True, autoincrement=True)

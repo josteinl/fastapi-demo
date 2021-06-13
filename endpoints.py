@@ -4,9 +4,8 @@ from fastapi import APIRouter, HTTPException, status
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
 
-import service
+import services
 from database import get_db
-# from service import get_projects
 
 router = APIRouter()
 
@@ -17,6 +16,5 @@ router = APIRouter()
     status_code=status.HTTP_200_OK,
 )
 def get_projects(db: Session = Depends(get_db)):
-    projects = service.get_projects(db)
+    projects = services.get_projects(db)
     return projects
-

@@ -1,4 +1,4 @@
-# File: service.py
+# File: services.py
 from sqlalchemy.orm import Session
 
 from model import Project
