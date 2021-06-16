@@ -4,12 +4,12 @@ import endpoints
 app = FastAPI(title="Small API", version='0.1.3')
 
 
-@app.get("/")
-async def root_is_the_best():
-    """
-    This is the root end point.
-    """
-    return {"message": "Hello World"}
+# @app.get("/")
+# async def root_is_the_best():
+#     """
+#     This is the root end point.
+#     """
+#     return {"message": "Hello World"}
 
 
 app.include_router(endpoints.router)

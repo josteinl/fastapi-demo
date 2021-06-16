@@ -1,3 +1,4 @@
 FastAPI
+pydantic
 sqlalchemy
 uvicorn

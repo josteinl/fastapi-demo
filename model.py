@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, deferred
 from sqlalchemy.sql.schema import ForeignKey
 
 from database import Base, engine
@@ -13,6 +13,7 @@ class Project(Base):
     project_id = Column(Integer, primary_key=True, autoincrement=False)
     name = Column(String, nullable=True)
     srid = Column(Integer, nullable=False)
+    heavy = deferred(Column(String, nullable=True))
     locations = relationship(
         "Location",
         back_populates="project",

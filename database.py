@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from fastapi.requests import Request
 
-engine = create_engine("sqlite:///./sql_app.db")
+engine = create_engine("sqlite:///./sql_app.db?check_same_thread=False")
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
