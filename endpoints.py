@@ -12,7 +12,6 @@ router = APIRouter()
 
 @router.get(
     "/projects",
-    # response_model=List[schemas.Project],
     status_code=status.HTTP_200_OK,
 )
 def get_projects(db: Session = Depends(get_db)):
