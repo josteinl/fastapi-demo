@@ -57,8 +57,6 @@ def add_project(project_in: schemas.ProjectFull, db: Session = Depends(get_db)):
     return created_project
 
 
-
-
 @router.get(
     "/projects/{project_id}/locations",
     tags=["locations"],
@@ -66,7 +64,7 @@ def add_project(project_in: schemas.ProjectFull, db: Session = Depends(get_db)):
     status_code=status.HTTP_200_OK,
 )
 async def get_locations_in_project(
-    project_id: int, db: Session = Depends(get_db)
+        project_id: int, db: Session = Depends(get_db)
 ):
     project = services.get_project(db, project_id)
     if not project:
